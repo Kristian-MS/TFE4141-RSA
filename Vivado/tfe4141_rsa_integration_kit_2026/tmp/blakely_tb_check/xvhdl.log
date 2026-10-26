@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/source/blakely_mult.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'blakely_mult'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'blakely_mult_tb'

@@ -1,0 +1,864 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Sep  9 16:47:36 2026
+# Process ID         : 25848
+# Current directory  : C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.runs/impl_1
+# Command line       : vivado.exe -log latch.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source latch.tcl -notrace
+# Log file           : C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.runs/impl_1/latch.vdi
+# Journal file       : C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.runs/impl_1\vivado.jou
+# Running On         : MONSEN
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 Pro 7735U with Radeon Graphics     
+# CPU Frequency      : 2695 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 15869 MB
+# Swap memory        : 20489 MB
+# Total Virtual      : 36358 MB
+# Available Virtual  : 3581 MB
+#-----------------------------------------------------------
+source latch.tcl -notrace
+create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 530.648 ; gain = 222.691
+Command: link_design -top latch -part xc7z020clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 765.660 ; gain = 0.000
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc]
+WARNING: [Vivado 12-584] No ports matched 'wbClk'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:1]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports wbClk]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:1]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'bftClk'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:2]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports bftClk]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:2]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-507] No nets matched 'bftClk'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:3]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:3]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:4]
+WARNING: [Vivado 12-627] No clocks matched 'wbClk'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:4]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:4]
+get_clocks: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1422.688 ; gain = 515.215
+WARNING: [Vivado 12-627] No clocks matched 'bftClk'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:4]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:4]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_clocks wbClk]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:4]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'bftClk'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:5]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:5]
+WARNING: [Vivado 12-627] No clocks matched 'wbClk'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:5]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:5]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_clocks bftClk]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:5]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'bftClk'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbClk'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[0]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[2]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[3]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[6]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[7]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[8]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[9]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[27]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[5]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[29]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[24]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[18]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[25]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[22]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[11]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[4]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[23]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[26]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[17]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[20]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[28]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[21]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[19]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[31]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[16]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[13]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[1]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[30]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[15]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[12]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[14]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbOutputData[10]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[14]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[15]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[16]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[17]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[18]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[19]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[21]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[28]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[30]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[27]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[25]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[31]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[24]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[26]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[29]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[22]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[20]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[23]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[3]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[13]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[0]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[11]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[2]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[10]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[12]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[1]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[8]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[7]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[6]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[5]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[4]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'error'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'reset'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbDataForOutput'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:78]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:78]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbDataForInput'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:79]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:79]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbWriteOut'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:81]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:81]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'wbInputData[9]'. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc:83]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.srcs/constrs_1/imports/Sources/bft_zynq.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1422.688 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+10 Infos, 78 Warnings, 76 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1422.688 ; gain = 892.039
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors, 2 Warnings
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1422.688 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1448.488 ; gain = 25.801
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 1 Initialization | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Detect if minReqCache needed
+Phase 2.1 Detect if minReqCache needed | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 2.2 Timer Update
+Phase 2.2 Timer Update | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Retarget | Checksum: 121ecb902
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Constant propagation | Checksum: 121ecb902
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 5 Sweep | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Sweep | Checksum: 121ecb902
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.092 . Memory (MB): peak = 1897.383 ; gain = 0.000
+BUFG optimization | Checksum: 121ecb902
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.097 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Shift Register Optimization | Checksum: 121ecb902
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.101 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Post Processing Netlist | Checksum: 121ecb902
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.104 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 9 Finalization | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.127 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 121ecb902
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+30 Infos, 78 Warnings, 76 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1897.383 ; gain = 474.695
+INFO: [Vivado 12-24828] Executing command : report_drc -file latch_drc_opted.rpt -pb latch_drc_opted.pb -rpx latch_drc_opted.rpx
+Command: report_drc -file latch_drc_opted.rpt -pb latch_drc_opted.pb -rpx latch_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.runs/impl_1/latch_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1897.383 ; gain = 0.000
+generate_parallel_reports: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.runs/impl_1/latch_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+CRITICAL WARNING: [DRC LUTLP-1] Combinatorial Loop Alert: 2 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. If the loop is known and understood, this DRC can be bypassed by acknowledging the condition and setting the following XDC constraint on any one of the nets in the loop: 'set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <myHier/myNet>]'. One net in the loop is QB_OBUF. Please evaluate your design. The cells in the loop are: QB_OBUF_inst_i_1, and Q_OBUF_inst_i_1.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Critical Warnings, 2 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 112f79077
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: ebf34079
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.287 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 18db91b37
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.451 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 18db91b37
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.460 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 18db91b37
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.481 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 18db91b37
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.499 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 18db91b37
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.503 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 18db91b37
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.505 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 1b4a1afd5
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.708 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 2.5 Global Place Phase2
+WARNING: [Place 46-29] Timing had been disabled during Placer and, therefore, physical synthesis in Placer will be skipped.
+Phase 2.5 Global Place Phase2 | Checksum: 17a2a1f62
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.828 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 17a2a1f62
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.838 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 17a2a1f62
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.847 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 19f689eef
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.863 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 14ad6dcc5
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.876 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 14ad6dcc5
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.879 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 1fc66651e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 1fc66651e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 1fc66651e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 1fc66651e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+Phase 4.1 Post Commit Optimization | Checksum: 1fc66651e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1fc66651e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1fc66651e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 1fc66651e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1fc66651e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Ending Placer Task | Checksum: 19800b2e8
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1897.383 ; gain = 0.000
+49 Infos, 79 Warnings, 77 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
+Running report generation with 2 threads.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file latch_utilization_placed.rpt -pb latch_utilization_placed.pb
+INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file latch_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_io -file latch_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.163 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote PlaceStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.runs/impl_1/latch_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Vivado_Tcl 4-235] No timing constraint found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+58 Infos, 79 Warnings, 77 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote PlaceStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.runs/impl_1/latch_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: b9d3bc56 ConstDB: 0 ShapeSum: c83383a2 RouteDB: 15f972f0
+Post Restoration Checksum: NetGraph: e4ba7136 | NumContArr: 5267f22f | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 2bc74589f
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:45 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 2 Router Initialization
+INFO: [Route 35-64] No timing constraints were detected. The router will operate in resource-optimization mode.
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 2bc74589f
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:45 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 2bc74589f
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:45 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 4
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 4
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 2bc74589f
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:45 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 2bc74589f
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:45 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+ Number of Nodes with overlaps = 0
+Phase 4.1 Initial Net Routing Pass | Checksum: 2a84a7339
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 4 Initial Routing | Checksum: 2a84a7339
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+Phase 5.1 Global Iteration 0 | Checksum: 2a84a7339
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 5 Rip-up And Reroute | Checksum: 2a84a7339
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 6 Delay and Skew Optimization
+Phase 6 Delay and Skew Optimization | Checksum: 2a84a7339
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+Phase 7.1 Hold Fix Iter | Checksum: 2a84a7339
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Phase 7 Post Hold Fix | Checksum: 2a84a7339
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.000207104 %
+  Global Horizontal Routing Utilization  = 0.000760649 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 0.900901%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 0%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 1.47059%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 4.41176%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 8 Route finalize | Checksum: 2a84a7339
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 2a84a7339
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 315e08e57
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Phase 11 Post Process Routing
+Phase 11 Post Process Routing | Checksum: 315e08e57
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Total Elapsed time in route_design: 45.626 secs
+
+Phase 12 Post-Route Event Processing
+Phase 12 Post-Route Event Processing | Checksum: 20aa539cd
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 20aa539cd
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+65 Infos, 79 Warnings, 77 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:46 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_drc -file latch_drc_routed.rpt -pb latch_drc_routed.pb -rpx latch_drc_routed.rpx
+Command: report_drc -file latch_drc_routed.rpt -pb latch_drc_routed.pb -rpx latch_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.runs/impl_1/latch_drc_routed.rpt.
+report_drc completed successfully
+INFO: [Vivado 12-24828] Executing command : report_methodology -file latch_methodology_drc_routed.rpt -pb latch_methodology_drc_routed.pb -rpx latch_methodology_drc_routed.rpx
+Command: report_methodology -file latch_methodology_drc_routed.rpt -pb latch_methodology_drc_routed.pb -rpx latch_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.runs/impl_1/latch_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file latch_timing_summary_routed.rpt -pb latch_timing_summary_routed.pb -rpx latch_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+INFO: [Vivado 12-24838] Running report commands "report_incremental_reuse, report_route_status" in parallel.
+Running report generation with 2 threads.
+INFO: [Vivado 12-24828] Executing command : report_route_status -file latch_route_status.rpt -pb latch_route_status.pb
+INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file latch_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [Vivado 12-24828] Executing command : report_power -file latch_power_routed.rpt -pb latch_power_summary_routed.pb -rpx latch_power_routed.rpx
+Command: report_power -file latch_power_routed.rpt -pb latch_power_summary_routed.pb -rpx latch_power_routed.rpx
+WARNING: [Power 33-232] No user defined clocks were found in the design! Power estimation will be inaccurate until this is corrected.
+Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+82 Infos, 81 Warnings, 77 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file latch_clock_utilization_routed.rpt
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file latch_bus_skew_routed.rpt -pb latch_bus_skew_routed.pb -rpx latch_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote PlaceStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1897.383 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.083 . Memory (MB): peak = 1897.383 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/krist/Documents/Vivaldo/user_projects/Task4/Task4.runs/impl_1/latch_routed.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Wed Sep  9 16:49:35 2026...

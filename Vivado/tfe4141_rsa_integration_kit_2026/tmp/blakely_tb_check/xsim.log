@@ -1,0 +1,116 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 13 18:06:46 2026
+# Process ID         : 31248
+# Current directory  : C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/tmp/blakely_tb_check
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/blakely_current_check/xsim_script.tcl}
+# Log file           : C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/tmp/blakely_tb_check/xsim.log
+# Journal file       : C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/tmp/blakely_tb_check\xsim.jou
+# Running On         : MONSEN
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 Pro 7735U with Radeon Graphics     
+# CPU Frequency      : 2695 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 15869 MB
+# Swap memory        : 19327 MB
+# Total Virtual      : 35196 MB
+# Available Virtual  : 9692 MB
+#-----------------------------------------------------------
+source xsim.dir/blakely_current_check/xsim_script.tcl
+# xsim {blakely_current_check} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Note: PASS zero A
+Time: 2630 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS zero B
+Time: 5220 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS identity
+Time: 7810 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS 7*9 mod 13 = 11
+Time: 10400 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS two subtractions
+Time: 12990 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS exact multiple
+Time: 15580 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS full width square
+Time: 18170 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS high bit A
+Time: 20760 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS even modulus
+Time: 23350 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 1
+Time: 25940 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 2
+Time: 28530 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 3
+Time: 31120 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 4
+Time: 33710 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 5
+Time: 36300 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 6
+Time: 38890 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 7
+Time: 41480 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 8
+Time: 44070 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 9
+Time: 46660 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 10
+Time: 49250 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 11
+Time: 51840 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 12
+Time: 54430 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 13
+Time: 57020 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 14
+Time: 59610 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 15
+Time: 62200 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 16
+Time: 64790 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 17
+Time: 67380 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 18
+Time: 69970 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 19
+Time: 72560 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 20
+Time: 75150 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 21
+Time: 77740 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 22
+Time: 80330 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 23
+Time: 82920 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 24
+Time: 85510 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 25
+Time: 88100 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 26
+Time: 90690 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 27
+Time: 93280 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 28
+Time: 95870 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 29
+Time: 98460 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 30
+Time: 101050 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 31
+Time: 103640 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS generated case 32
+Time: 106230 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: PASS after reset
+Time: 108860 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+Note: ALL 42 MULTIPLIER TESTS PASSED
+Time: 108860 ns  Iteration: 0  Process: /blakely_mult_tb/stimulus  File: C:/Users/krist/Documents/GitHub/TFE4141-RSA/Vivado/tfe4141_rsa_integration_kit_2026/Exponentiation/testbench/blakely_mult_tb.vhd
+$finish called at time : 108860 ns
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Oct 13 18:06:48 2026...
