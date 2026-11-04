@@ -67,29 +67,37 @@ end rsa_core;
 
 architecture rtl of rsa_core is
 
-    constant NUM_CORES : integer := 4;
+    constant NUM_CORES : integer := 256;
+    constant MSG_QUEUE_INDEX_SIZE : integer := 128; --satt som konstant slik at det kan endres ved senere anledning hvis det trengs
+    constant MSG_LAST_MESSAGE_ID : integer := 128; --satt som konstant slik at det kan endres ved senere anledning hvis det trengs
     
-    type message_id_array is array (0 to NUM_CORES-1) of std_logic_vector(C_BLOCK_SIZE-1 downto 0); -- litt overkill med C_BLOCK_SIZE
+    type message_id_array is array (0 to NUM_CORES-1) of integer range 0 to MSG_QUEUE_INDEX_SIZE-1; -- litt overkill med C_BLOCK_SIZE
     
     signal msg_id_currently_working   : message_id_array;
-    signal msg_id_done_waiting    : message_id_array;
+    signal msg_id_waiting_in_fifo    : message_id_array;
 
-    
     type data_array is array (0 to NUM_CORES-1) of std_logic_vector(C_BLOCK_SIZE-1 downto 0);
     
     signal core_message   : data_array;
     signal core_result    : data_array;
+
+    signal core_result_fifo_buffer    : data_array;
+    signal core_result_fifo_valid : std_logic_vector(0 to NUM_CORES-1);
     
     signal core_valid_in  : std_logic_vector(0 to NUM_CORES-1);
     signal core_ready_in  : std_logic_vector(0 to NUM_CORES-1);
     signal core_valid_out : std_logic_vector(0 to NUM_CORES-1);
     signal core_ready_out : std_logic_vector(0 to NUM_CORES-1);
-    
-    signal msg_queue_in_index : std_logic_vector(C_BLOCK_SIZE-1 downto 0); --Dette er index til hvilken meldiing som kommer inn. Denne skal puttes inn i message
-    signal msg_queue_out_index : std_logic_vector(C_BLOCK_SIZE-1 downto 0); --Dette er index til hvilken melding som skal sendes ut
+        
+    signal msg_queue_in_index : integer range 0 to MSG_QUEUE_INDEX_SIZE-1 := 0;
+    signal msg_queue_out_index : integer range 0 to MSG_QUEUE_INDEX_SIZE-1 := 0; --Dette er index til hvilken melding som skal sendes ut
 
     signal core_iter_index : integer range 0 to NUM_CORES-1 := 0;    
+    signal core_iter_output_index : integer range 0 to NUM_CORES-1 := 0;
     
+    signal core_msg_last : std_logic_vector(0 to NUM_CORES-1);
+    signal fifo_msg_last : std_logic_vector(0 to NUM_CORES-1);
+
 begin
 	gen_exponentiation : for i in 0 to NUM_CORES-1 generate
 
@@ -112,32 +120,84 @@ begin
 
     end generate;
     
+    ---- denne blokken sørger for at ready_out til hver kjerne er høy dersom fifo bufferet til kjernen er tomt og lav ellers
+    gen_ready : for i in 0 to NUM_CORES-1 generate
+        core_ready_out(i) <= not core_result_fifo_valid(i);
+    end generate;
+    
+    process(all)
+    begin
+        msgout_valid <= '0';
+        msgout_data <= (others => '0');
+    
+        for i in 0 to NUM_CORES-1 loop
+            if core_result_fifo_valid(i) = '1' and
+                msg_id_waiting_in_fifo(i) = msg_queue_out_index then
+    
+                msgout_valid <= '1';
+                msgout_last <= fifo_msg_last(i);
+                msgout_data <= core_result_fifo_buffer(i);
+                exit;
+            end if;
+        end loop;
+    end process;
+
+    msgin_ready <= core_ready_in(core_iter_index);
+
     process(clk)
     begin
         if rising_edge(clk) then
             if reset_n = '0' then
                 core_iter_index <= 0;
-                msgin_ready <= '0';
+                
+                --Input handler
+                core_valid_in <= (others => '0');
+                msg_queue_in_index <= 0;
+
+                --Output handler
+                core_result_fifo_valid <= (others => '0');
+                msg_queue_out_index <= 0;
             else
-                if core_ready_in(core_iter_index) = '1' then
-                    msgin_ready <= '1';
-                    if msgin_valid = '1' then
-                        core_message(core_iter_index) <= msgin_data;
-                        core_valid_in(core_iter_index) <= '1';
-                        msgin_ready <= '0';
-                    end if;
+                core_valid_in <= (others => '0');
+                
+                --Denne blokken finner ledige kjerner og en etter en putter nye meldinger inni
+                if core_ready_in(core_iter_index) = '1' and msgin_valid = '1' then
+                    core_message(core_iter_index) <= msgin_data;
+                    core_valid_in(core_iter_index) <= '1';
+                    core_iter_index <= (core_iter_index + 1) mod NUM_CORES; --inkrementer "for" løkken når den har lagt inn i en kjerne til den når NUM_CORES
+                    msg_id_currently_working(core_iter_index) <= msg_queue_in_index;
+                    core_msg_last(core_iter_index) <= msgin_last;
+                    
+                    msg_queue_in_index <= (msg_queue_in_index + 1) mod MSG_QUEUE_INDEX_SIZE;
                 end if;
                 
-                --if core_valid_out(core_iter_index) = '1' then
-                    -- Process result
-                --    core_iter_index <= (core_iter_index + 1) mod 4;
-                --end if;
-                core_iter_index <= (core_iter_index + 1) mod NUM_CORES;
+                --Denne blokken stapper meldingene til alle ferdige kjerner inn i core_result_fifo_buffer
+                for i in 0 to NUM_CORES-1 loop
+                    if core_valid_out(i) = '1' and core_ready_out(i) = '1' then
+                        core_result_fifo_buffer(i) <= core_result(i);
+                        core_result_fifo_valid(i) <= '1';
+                        msg_id_waiting_in_fifo(i) <= msg_id_currently_working(i);
+                        fifo_msg_last(i) <= core_msg_last(i);
+                    end if;
+                end loop;
+                
+                --Denne blokken looper gjennom alle fifo buffere og bestemmer hviken som skla sendes ut
+                
+                if msgout_valid = '1' and msgout_ready = '1' then
+                    for i in 0 to NUM_CORES-1 loop
+                        if core_result_fifo_valid(i) = '1' and
+                            msg_id_waiting_in_fifo(i) = msg_queue_out_index then
+                            core_result_fifo_valid(i) <= '0';
+                            msg_queue_out_index <= (msg_queue_out_index + 1) mod MSG_QUEUE_INDEX_SIZE;
+                            exit;
+                        end if;
+                    end loop;
+                end if;
             end if;
         end if;
     end process;
     
-    msgout_last <= msgin_last;
+    --msgout_last <= msgin_last;
 
 	rsa_status   <= (others => '0');
 end rtl;

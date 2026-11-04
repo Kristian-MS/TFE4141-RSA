@@ -82,6 +82,7 @@ begin
                 n_reg        <= (others => '0');
                 result       <= (others => '0');
                 mult_reset <= '0';
+                mult_start <= '0';
                 valid_out <= '0';
     
             else
