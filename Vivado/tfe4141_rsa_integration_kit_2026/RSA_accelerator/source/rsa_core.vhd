@@ -67,7 +67,7 @@ end rsa_core;
 
 architecture rtl of rsa_core is
 
-    constant NUM_CORES : integer := 256;
+    constant NUM_CORES : integer := 24;
     constant MSG_QUEUE_INDEX_SIZE : integer := 128; --satt som konstant slik at det kan endres ved senere anledning hvis det trengs
     constant MSG_LAST_MESSAGE_ID : integer := 128; --satt som konstant slik at det kan endres ved senere anledning hvis det trengs
     
@@ -164,12 +164,12 @@ begin
                 if core_ready_in(core_iter_index) = '1' and msgin_valid = '1' then
                     core_message(core_iter_index) <= msgin_data;
                     core_valid_in(core_iter_index) <= '1';
-                    core_iter_index <= (core_iter_index + 1) mod NUM_CORES; --inkrementer "for" løkken når den har lagt inn i en kjerne til den når NUM_CORES
                     msg_id_currently_working(core_iter_index) <= msg_queue_in_index;
                     core_msg_last(core_iter_index) <= msgin_last;
                     
                     msg_queue_in_index <= (msg_queue_in_index + 1) mod MSG_QUEUE_INDEX_SIZE;
                 end if;
+                core_iter_index <= (core_iter_index + 1) mod NUM_CORES; --inkrementer "for" løkken når den har lagt inn i en kjerne til den når NUM_CORES
                 
                 --Denne blokken stapper meldingene til alle ferdige kjerner inn i core_result_fifo_buffer
                 for i in 0 to NUM_CORES-1 loop
