@@ -39,7 +39,7 @@ entity blakely_mult is
            result : out STD_LOGIC_VECTOR (255 downto 0);
            input_valid : in STD_LOGIC;
            output_valid : out STD_LOGIC;
-           reset : in STD_LOGIC;
+           n_reset : in STD_LOGIC;
            clk : in STD_LOGIC);
 end blakely_mult;
 
@@ -61,9 +61,11 @@ begin
 
 process(clk)
     variable temp : unsigned(257 downto 0);
+    variable n_extended : unsigned(257 downto 0);
+    variable sub_temp    : unsigned(258 downto 0);
 begin
     if rising_edge(clk) then
-        if reset = '0' then
+        if n_reset = '0' then
             state        <= IDLE;
             bit_index    <= 255;
             a_reg        <= (others => '0');
@@ -76,30 +78,48 @@ begin
         else
             output_valid <= '0';
             case state is
-                when IDLE =>
+                when IDLE => 
                     if input_valid = '1' then
-                        a_reg        <= unsigned(A);
-                        b_reg        <= unsigned(B);
-                        n_reg        <= unsigned(n);
-                        s_reg        <= (others => '0');
-                        bit_index    <= 255;
-                        output_valid <= '0';
-                        state        <= RUN;
+                    
+                        if unsigned(n) = 0 then
+                          report "modulus operand n is zero" severity warning;
+                            
+                        elsif unsigned(B) >= unsigned(n) then
+                          report "input B greater than modulus operand n, invalid inputs" severity warning;
+                            
+                        else --Valid inputs
+                            a_reg        <= unsigned(A);
+                            b_reg        <= unsigned(B);
+                            n_reg        <= unsigned(n);
+                            s_reg        <= (others => '0');
+                            bit_index    <= 255;
+                            output_valid <= '0';
+                            state        <= RUN;
+                        end if;
                     end if;
 
                 when RUN =>
                     temp := shift_left(s_reg, 1);
 
                     if a_reg(bit_index) = '1' then
-                        temp := temp + b_reg;
+                        temp := temp + resize(b_reg, temp'length);
                     end if;
                     
-                    if temp >= n_reg then
-                        temp := temp - n_reg;
+                    -- Extend modulus to match temp
+                    n_extended := resize(n_reg, n_extended'length);
+                    
+                    -- First modular reduction
+                    sub_temp := ('0' & temp) - ('0' & n_extended);      -- '0' & n_extended er en måte å gi n_extend en signed bit smart for å sjekke underflow
+                    
+                    if sub_temp(258) = '0' then
+                        temp := sub_temp(257 downto 0);
                     end if;
                     
-                    if temp >= n_reg then
-                        temp := temp - n_reg;
+                    -- Second modular reduction
+                    sub_temp := ('0' & temp) - ('0' & n_extended);
+                    
+                    if sub_temp(258) = '0' then
+                        temp := sub_temp(257 downto 0);
                     end if;
                     
                     s_reg <= temp;
@@ -114,6 +134,8 @@ begin
                     result       <= std_logic_vector(s_reg(255 downto 0));
                     output_valid <= '1';
                     state        <= IDLE;
+                when others =>
+                    state <= IDLE;
             end case;
         end if;
     end if;
