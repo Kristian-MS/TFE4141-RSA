@@ -67,7 +67,7 @@ end rsa_core;
 
 architecture rtl of rsa_core is
 
-    constant NUM_CORES : integer := 24;
+    constant NUM_CORES : integer := 10;
     constant MSG_QUEUE_INDEX_SIZE : integer := 128; --satt som konstant slik at det kan endres ved senere anledning hvis det trengs
     constant MSG_LAST_MESSAGE_ID : integer := 128; --satt som konstant slik at det kan endres ved senere anledning hvis det trengs
     
