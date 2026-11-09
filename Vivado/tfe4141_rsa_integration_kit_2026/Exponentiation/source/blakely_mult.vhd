@@ -105,6 +105,8 @@ begin
                         temp := temp + resize(b_reg, temp'length);
                     end if;
                     
+                    --a_reg <= shift_left(a_reg, 1);
+                    
                     -- Extend modulus to match temp
                     n_extended := resize(n_reg, n_extended'length);
                     

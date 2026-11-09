@@ -1,6 +1,7 @@
 
 set start_time [clock clicks -milliseconds]
 cd [file dirname [file normalize [info script]]]
+set origin_dir "."
 
 #load procedures
 source -notrace [file normalize "$origin_dir/procedures.tcl"]
@@ -8,7 +9,6 @@ source -notrace [file normalize "$origin_dir/procedures.tcl"]
 #close_project
 safe_close_project
 
-set origin_dir "."
 source -notrace [file normalize "${origin_dir}/generate_IP.tcl"]
 cd [file dirname [file normalize [info script]]]
 

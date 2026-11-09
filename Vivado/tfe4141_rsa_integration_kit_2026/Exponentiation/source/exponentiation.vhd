@@ -108,7 +108,7 @@ begin
                                 bit_index    <= 255;
                                 
                                 modulus_reg <= modulus;
-                                acc_reg <= to_unsigned(1, acc_reg'length) mod unsigned(modulus);
+                                acc_reg <= to_unsigned(1, acc_reg'length);
                                 
                                 valid_out    <= '0';
                                 
@@ -140,8 +140,8 @@ begin
                                     result <= std_logic_vector(temp);
                                     state <= DONE;
                                 else
-                                    state <= SQUARE_START;
-                                    bit_index <= bit_index - 1;                 
+                                    bit_index <= bit_index - 1;
+                                    state     <= SQUARE_START;               
                                 end if;
                             end if;
                         end if;
@@ -156,8 +156,8 @@ begin
                                 result <= std_logic_vector(temp);
                                 state <= DONE;
                             else
-                                bit_index <= bit_index -1;
-                                state <= SQUARE_START;
+                                bit_index <= bit_index - 1;
+                                state     <= SQUARE_START;
                             end if;
                         end if;
                          
