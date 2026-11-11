@@ -67,9 +67,9 @@ end rsa_core;
 
 architecture rtl of rsa_core is
 
-    constant NUM_CORES : integer := 16;
-    constant MSG_QUEUE_INDEX_SIZE : integer := 128; --satt som konstant slik at det kan endres ved senere anledning hvis det trengs
-    constant MSG_LAST_MESSAGE_ID : integer := 128; --satt som konstant slik at det kan endres ved senere anledning hvis det trengs
+    constant NUM_CORES : integer := 10;
+    constant MSG_QUEUE_INDEX_SIZE : integer := 24; --satt som konstant slik at det kan endres ved senere anledning hvis det trengs
+    constant MSG_LAST_MESSAGE_ID : integer := 24; --satt som konstant slik at det kan endres ved senere anledning hvis det trengs
     
     type message_id_array is array (0 to NUM_CORES-1) of integer range 0 to MSG_QUEUE_INDEX_SIZE-1; -- litt overkill med C_BLOCK_SIZE
     
@@ -129,7 +129,8 @@ begin
     begin
         msgout_valid <= '0';
         msgout_data <= (others => '0');
-    
+        msgout_last  <= '0';
+        
         for i in 0 to NUM_CORES-1 loop
             if core_result_fifo_valid(i) = '1' and
                 msg_id_waiting_in_fifo(i) = msg_queue_out_index then

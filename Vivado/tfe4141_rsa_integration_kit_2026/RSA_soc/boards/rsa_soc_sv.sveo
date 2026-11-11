@@ -66,12 +66,6 @@
 
 // INST_TAG     ------ Begin cut for WRAPPER INSTANTIATION Template ------
 rsa_soc_sv your_instance_name (
-  .FIXED_IO_mio(FIXED_IO_mio), // inout wire [53:0] FIXED_IO_mio
-  .FIXED_IO_ddr_vrn(FIXED_IO_ddr_vrn), // inout wire FIXED_IO_ddr_vrn
-  .FIXED_IO_ddr_vrp(FIXED_IO_ddr_vrp), // inout wire FIXED_IO_ddr_vrp
-  .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb), // inout wire FIXED_IO_ps_srstb
-  .FIXED_IO_ps_clk(FIXED_IO_ps_clk), // inout wire FIXED_IO_ps_clk
-  .FIXED_IO_ps_porb(FIXED_IO_ps_porb), // inout wire FIXED_IO_ps_porb
   .DDR_cas_n(DDR_cas_n), // inout wire DDR_cas_n
   .DDR_cke(DDR_cke), // inout wire DDR_cke
   .DDR_ck_n(DDR_ck_n), // inout wire DDR_ck_n
@@ -86,7 +80,13 @@ rsa_soc_sv your_instance_name (
   .DDR_dm(DDR_dm), // inout wire [3:0] DDR_dm
   .DDR_dq(DDR_dq), // inout wire [31:0] DDR_dq
   .DDR_dqs_n(DDR_dqs_n), // inout wire [3:0] DDR_dqs_n
-  .DDR_dqs_p(DDR_dqs_p) // inout wire [3:0] DDR_dqs_p
+  .DDR_dqs_p(DDR_dqs_p), // inout wire [3:0] DDR_dqs_p
+  .FIXED_IO_mio(FIXED_IO_mio), // inout wire [53:0] FIXED_IO_mio
+  .FIXED_IO_ddr_vrn(FIXED_IO_ddr_vrn), // inout wire FIXED_IO_ddr_vrn
+  .FIXED_IO_ddr_vrp(FIXED_IO_ddr_vrp), // inout wire FIXED_IO_ddr_vrp
+  .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb), // inout wire FIXED_IO_ps_srstb
+  .FIXED_IO_ps_clk(FIXED_IO_ps_clk), // inout wire FIXED_IO_ps_clk
+  .FIXED_IO_ps_porb(FIXED_IO_ps_porb) // inout wire FIXED_IO_ps_porb
 );
 // INST_TAG_END ------  End cut for WRAPPER INSTANTIATION Template  ------
 

@@ -37,6 +37,9 @@ architecture expBehave of exponentiation is
 
     type state_t is (
         IDLE,
+        VALIDATE,
+        INIT,
+        CHECK_ZERO,
         SQUARE_START,
         SQUARE_WAIT,
         BASE_WAIT,
@@ -44,6 +47,7 @@ architecture expBehave of exponentiation is
     );
     
     signal state : state_t := IDLE;
+    signal input_ok : std_logic;
     
     signal bit_index : integer range 0 to 255 := 255;
 
@@ -57,6 +61,7 @@ architecture expBehave of exponentiation is
     signal mult_start  : std_logic;
     signal mult_done   : std_logic;
     signal mult_reset  : std_logic;
+    signal multiply_base : std_logic;
 
 begin
     u_mult : entity work.blakely_mult
@@ -73,6 +78,9 @@ begin
         
     
     mult_reset <= reset_n;
+    mult_a <= std_logic_vector(acc_reg);
+    mult_b <= std_logic_vector(base_reg) when multiply_base = '1' else std_logic_vector(acc_reg);
+    
     
     process(clk)
         variable temp : unsigned(255 downto 0);
@@ -86,6 +94,8 @@ begin
                 result       <= (others => '0');
                 mult_start   <= '0';
                 valid_out    <= '0';
+                input_ok <= '0';
+                multiply_base <= '0';
                 
             else
             
@@ -93,35 +103,73 @@ begin
                 
                 case state is
                     when IDLE =>
-                        mult_start <= '0';
-                        
                         if valid_in = '1' then
-                            
-                            if unsigned(modulus) <= 1 then
-                                report "Modulus must be greater than 1" severity warning;
+                            -- Lagre inngangene uten å vente på sammenligningen.
+                            base_reg    <= unsigned(message);
+                            key_reg     <= unsigned(key);
+                            modulus_reg <= modulus;
+                            valid_out   <= '0';
+                    
+                            state <= VALIDATE;
+                        end if;
 
-                            elsif unsigned(message) >= unsigned(modulus) then 
-                                   report "Message must be smaller than modulus" severity warning;
-                            else       
-                                base_reg     <= unsigned(message);
-                                key_reg      <= unsigned(key);
-                                bit_index    <= 255;
-                                
-                                modulus_reg <= modulus;
-                                acc_reg <= to_unsigned(1, acc_reg'length);
-                                
-                                valid_out    <= '0';
-                                
-                            state       <= SQUARE_START;
+                    when VALIDATE =>
+                        -- Sammenlign lokale, registrerte verdier.
+                        -- Lagre resultatet i ett register.
+                        if unsigned(modulus_reg) > 1 and
+                           base_reg < unsigned(modulus_reg) then
+                            input_ok <= '1';
+                        else
+                            input_ok <= '0';
+                        end if;
+                    
+                        state <= INIT;
+                    
+                    when INIT =>
+                        -- Her brukes det registrerte resultatet fra VALIDATE.
+                        if input_ok = '1' then
+                            acc_reg   <= to_unsigned(1, acc_reg'length);
+                            bit_index <= 255;
+                            state     <= CHECK_ZERO;
+                        else
+                            report "Invalid message or modulus" severity warning;
+                            state <= IDLE;
+                        end if;
+                        
+                    when CHECK_ZERO =>
+                        if key_reg(255) = '1' then
+                            -- Første ettbit: 1² * base = base.
+                            -- Vi slipper begge multiplikasjonene.
+                            acc_reg <= base_reg;
+                    
+                            if bit_index = 0 then
+                                -- Eksponenten er 1.
+                                result <= std_logic_vector(base_reg);
+                                state  <= DONE;
+                            else
+                                -- Fortsett vanlig square-and-multiply
+                                -- fra biten etter første ettbit.
+                                key_reg   <= shift_left(key_reg, 1);
+                                bit_index <= bit_index - 1;
+                                state     <= SQUARE_START;
                             end if;
-                            
+                    
+                        elsif bit_index = 0 then
+                            -- Alle 256 bitene var null: message^0 mod n = 1.
+                            -- VALIDATE har allerede sikret n > 1.
+                            result <= std_logic_vector(to_unsigned(1, result'length));
+                            state  <= DONE;
+                    
+                        else
+                            -- Ledende null: gå videre uten multiplikasjon.
+                            key_reg   <= shift_left(key_reg, 1);
+                            bit_index <= bit_index - 1;
                         end if;
 
                     when SQUARE_START =>
-                        mult_a     <= std_logic_vector(acc_reg);
-                        mult_b     <= std_logic_vector(acc_reg);
-                        mult_start <= '1';
-                        state      <= SQUARE_WAIT;
+                        multiply_base <= '0';
+                        mult_start   <= '1';
+                        state        <= SQUARE_WAIT;
                         
                     when SQUARE_WAIT =>
                         mult_start <= '0';
@@ -130,17 +178,18 @@ begin
                             temp:= unsigned(mult_result);
                             acc_reg <= temp;
                             
-                            if key_reg(bit_index) = '1' then
-                                mult_a <= std_logic_vector(temp);
-                                mult_b <= std_logic_vector(base_reg);
-                                mult_start <= '1';
-                                state <= BASE_WAIT;
+                            if key_reg(255) = '1' then
+                                acc_reg       <= unsigned(mult_result);
+                                multiply_base <= '1';
+                                mult_start    <= '1';
+                                state         <= BASE_WAIT;
                             else
                                 if bit_index = 0 then
                                     result <= std_logic_vector(temp);
                                     state <= DONE;
                                 else
                                     bit_index <= bit_index - 1;
+                                    key_reg <= shift_left(key_reg, 1);
                                     state     <= SQUARE_START;               
                                 end if;
                             end if;
@@ -157,6 +206,7 @@ begin
                                 state <= DONE;
                             else
                                 bit_index <= bit_index - 1;
+                                key_reg <= shift_left(key_reg, 1);
                                 state     <= SQUARE_START;
                             end if;
                         end if;

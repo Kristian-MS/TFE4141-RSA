@@ -54,18 +54,6 @@
 
 module rsa_soc_sv (
   (* X_INTERFACE_IGNORE = "true" *)
-  inout wire [53:0] FIXED_IO_mio,
-  (* X_INTERFACE_IGNORE = "true" *)
-  inout wire FIXED_IO_ddr_vrn,
-  (* X_INTERFACE_IGNORE = "true" *)
-  inout wire FIXED_IO_ddr_vrp,
-  (* X_INTERFACE_IGNORE = "true" *)
-  inout wire FIXED_IO_ps_srstb,
-  (* X_INTERFACE_IGNORE = "true" *)
-  inout wire FIXED_IO_ps_clk,
-  (* X_INTERFACE_IGNORE = "true" *)
-  inout wire FIXED_IO_ps_porb,
-  (* X_INTERFACE_IGNORE = "true" *)
   inout wire DDR_cas_n,
   (* X_INTERFACE_IGNORE = "true" *)
   inout wire DDR_cke,
@@ -94,16 +82,22 @@ module rsa_soc_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   inout wire [3:0] DDR_dqs_n,
   (* X_INTERFACE_IGNORE = "true" *)
-  inout wire [3:0] DDR_dqs_p
+  inout wire [3:0] DDR_dqs_p,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire [53:0] FIXED_IO_mio,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire FIXED_IO_ddr_vrn,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire FIXED_IO_ddr_vrp,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire FIXED_IO_ps_srstb,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire FIXED_IO_ps_clk,
+  (* X_INTERFACE_IGNORE = "true" *)
+  inout wire FIXED_IO_ps_porb
 );
 
   rsa_soc inst (
-    .FIXED_IO_mio(FIXED_IO_mio),
-    .FIXED_IO_ddr_vrn(FIXED_IO_ddr_vrn),
-    .FIXED_IO_ddr_vrp(FIXED_IO_ddr_vrp),
-    .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-    .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
-    .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
     .DDR_cas_n(DDR_cas_n),
     .DDR_cke(DDR_cke),
     .DDR_ck_n(DDR_ck_n),
@@ -118,7 +112,13 @@ module rsa_soc_sv (
     .DDR_dm(DDR_dm),
     .DDR_dq(DDR_dq),
     .DDR_dqs_n(DDR_dqs_n),
-    .DDR_dqs_p(DDR_dqs_p)
+    .DDR_dqs_p(DDR_dqs_p),
+    .FIXED_IO_mio(FIXED_IO_mio),
+    .FIXED_IO_ddr_vrn(FIXED_IO_ddr_vrn),
+    .FIXED_IO_ddr_vrp(FIXED_IO_ddr_vrp),
+    .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+    .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
+    .FIXED_IO_ps_porb(FIXED_IO_ps_porb)
   );
 
 endmodule

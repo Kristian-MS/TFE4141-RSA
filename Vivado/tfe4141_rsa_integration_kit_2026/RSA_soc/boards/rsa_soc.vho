@@ -53,12 +53,6 @@
 -- COMP_TAG     ------ Begin cut for COMPONENT Declaration ------
 COMPONENT rsa_soc
   PORT (
-    FIXED_IO_mio : INOUT STD_LOGIC_VECTOR(53 DOWNTO 0);
-    FIXED_IO_ddr_vrn : INOUT STD_LOGIC;
-    FIXED_IO_ddr_vrp : INOUT STD_LOGIC;
-    FIXED_IO_ps_srstb : INOUT STD_LOGIC;
-    FIXED_IO_ps_clk : INOUT STD_LOGIC;
-    FIXED_IO_ps_porb : INOUT STD_LOGIC;
     DDR_cas_n : INOUT STD_LOGIC;
     DDR_cke : INOUT STD_LOGIC;
     DDR_ck_n : INOUT STD_LOGIC;
@@ -73,7 +67,13 @@ COMPONENT rsa_soc
     DDR_dm : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     DDR_dq : INOUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     DDR_dqs_n : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    DDR_dqs_p : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+    DDR_dqs_p : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    FIXED_IO_mio : INOUT STD_LOGIC_VECTOR(53 DOWNTO 0);
+    FIXED_IO_ddr_vrn : INOUT STD_LOGIC;
+    FIXED_IO_ddr_vrp : INOUT STD_LOGIC;
+    FIXED_IO_ps_srstb : INOUT STD_LOGIC;
+    FIXED_IO_ps_clk : INOUT STD_LOGIC;
+    FIXED_IO_ps_porb : INOUT STD_LOGIC
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -84,12 +84,6 @@ END COMPONENT;
 -- INST_TAG     ------ Begin cut for INSTANTIATION Template ------
 your_instance_name : rsa_soc
   PORT MAP (
-    FIXED_IO_mio => FIXED_IO_mio,
-    FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
-    FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
-    FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-    FIXED_IO_ps_clk => FIXED_IO_ps_clk,
-    FIXED_IO_ps_porb => FIXED_IO_ps_porb,
     DDR_cas_n => DDR_cas_n,
     DDR_cke => DDR_cke,
     DDR_ck_n => DDR_ck_n,
@@ -104,7 +98,13 @@ your_instance_name : rsa_soc
     DDR_dm => DDR_dm,
     DDR_dq => DDR_dq,
     DDR_dqs_n => DDR_dqs_n,
-    DDR_dqs_p => DDR_dqs_p
+    DDR_dqs_p => DDR_dqs_p,
+    FIXED_IO_mio => FIXED_IO_mio,
+    FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
+    FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
+    FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+    FIXED_IO_ps_clk => FIXED_IO_ps_clk,
+    FIXED_IO_ps_porb => FIXED_IO_ps_porb
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

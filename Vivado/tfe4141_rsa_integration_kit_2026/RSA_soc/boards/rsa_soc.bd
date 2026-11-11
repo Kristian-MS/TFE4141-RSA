@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCC6CFA53F622E079",
+      "boundary_crc": "0xCC6CFA53B4580162",
       "device": "xc7z020clg400-1",
       "name": "rsa_soc",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -2361,8 +2361,8 @@
           "xbar": {
             "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
             "ip_revision": "38",
-            "xci_name": "rsa_soc_ps7_0_axi_periph_imp_xbar_1",
-            "xci_path": "ip\\rsa_soc_ps7_0_axi_periph_imp_xbar_1\\rsa_soc_ps7_0_axi_periph_imp_xbar_1.xci",
+            "xci_name": "rsa_soc_ps7_0_axi_periph_imp_xbar_0",
+            "xci_path": "ip\\rsa_soc_ps7_0_axi_periph_imp_xbar_0\\rsa_soc_ps7_0_axi_periph_imp_xbar_0.xci",
             "inst_hier_path": "ps7_0_axi_periph/xbar",
             "has_run_ip_tcl": "true",
             "parameters": {
